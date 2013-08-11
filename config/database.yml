@@ -1,0 +1,16 @@
+defaults: &defaults
+  adapter: postgresql
+  username: pair
+  password: pair
+  database: dans_<%= Rails.env %>
+  encoding: unicode
+  template: template0
+  host: localhost
+  port: 5433
+
+
+development: &development
+  <<: *defaults
+
+test: &test
+  <<: *defaults

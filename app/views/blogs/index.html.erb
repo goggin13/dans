@@ -1,0 +1,10 @@
+<h1>Blogs</h1>
+
+<% if @first %>
+  <%= render @first %>
+<% end %>
+
+<% @blogs.each do |blog| %>
+  <%= blog.summary %>...
+  <%= link_to "Edit", edit_blog_path(blog) %>
+<% end %>
