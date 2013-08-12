@@ -1,2 +1,7 @@
-<%= blog.content %>
-<%= link_to "Edit", edit_blog_path(blog) %>
+<%= link_to "Edit", edit_blog_path(blog), class: 'float-right' %>
+
+<h2 class="title">
+  <%= blog.title %>
+</h2>
+
+<%= BlueCloth.new(blog.content).to_html.html_safe %>

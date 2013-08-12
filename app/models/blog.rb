@@ -5,7 +5,7 @@ class Blog < ActiveRecord::Base
   validates_presence_of :title
   validates_inclusion_of :published, in: [true, false]
 
-  def summary
-    content[0, 250]
+  def summary(length=250)
+    content[0, length]
   end
 end

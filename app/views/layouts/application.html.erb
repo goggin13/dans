@@ -1,14 +1,84 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Dans</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
 
-<%= yield %>
+Name       : Conventional 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130128
+
+-->
+<html>
+  <head>
+    <title>BreakingDan</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div id="header-wrapper">
+        <div id="header" class="container">
+          <div id="logo">
+            <h1>
+              <%= link_to 'BreakingDan', root_path %>
+            </h1>
+          </div>
+          <div id="menu">
+            <ul>
+              <li class="<%= request.fullpath == '/' ? 'active' : '' %>">
+                <%= link_to 'Posts', root_path %>
+              </li>
+              <li class="<%= request.fullpath =~ /pages\/about/ ? 'active' : '' %>">
+                <%= link_to 'About', pages_about_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="banner" class="container">
+        <img src="<%= asset_path 'conventional/img04.jpg' %>" width="1000" height="300" alt="" />
+      </div>
+
+      <div id="page" class="container">
+        <div id="content">
+          <div id="box1">
+            <%= yield %>
+          </div>
+        </div>
+
+        <div id="sidebar">
+          <h2>Recent</h2>
+          <ul class="style3">
+            <% @recent.each do |post| %>
+              <li>
+                <p>
+                  <%= link_to post.title, post %>
+                </p>
+                <p class="date">
+                  <%= post.created_at.strftime("%m-%d-%Y") %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+    </div>
+
+  </div>
 
 </body>
 </html>
