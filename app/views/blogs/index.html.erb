@@ -7,7 +7,7 @@
     <li>
       <h3><%= blog.title %></h3>
       <p>
-        <%= BlueCloth.new(blog.summary).to_html.html_safe %>
+        <%= BlueCloth.new("#{blog.summary}...").to_html.html_safe %>
       </p>
       <p><%= link_to "Read More", blog, class: 'button-style' %></p>
       <% if true %>
