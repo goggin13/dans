@@ -10,7 +10,7 @@
         <%= BlueCloth.new("#{blog.summary}...").to_html.html_safe %>
       </p>
       <p><%= link_to "Read More", blog, class: 'button-style' %></p>
-      <% if true %>
+      <% if signed_in? && current_user.admin? %>
         <p><%= link_to "Edit", edit_blog_path(blog), class: 'button-style' %></p>
       <% end %>
     </li>

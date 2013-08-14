@@ -1,3 +1,22 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#login_icon {
+width: 20px;
+cursor: pointer;
+float: left;
+}
+
+#flash_error {
+border: thin solid red;
+}
+
+#flash_alert {
+border: thin solid white;
+}
+
+.flash {
+padding: 10px;
+width: 700px;
+margin: 0px auto;
+color: white;
+       border-radius: 8px;
+text-align: center;
+}

@@ -22,8 +22,21 @@ Released   : 20130128
     <%= csrf_meta_tags %>
   </head>
   <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=357103551019569";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="wrapper">
+
+     <%- flash.each do |name, msg| -%>
+       <%= content_tag :div, msg, :class => 'flash', :id => "flash_#{name}" if msg.is_a?(String) %>
+     <%- end -%> 
+
       <div id="header-wrapper">
         <div id="header" class="container">
           <div id="logo">
@@ -39,6 +52,11 @@ Released   : 20130128
               <li class="<%= request.fullpath =~ /pages\/about/ ? 'active' : '' %>">
                 <%= link_to 'About', pages_about_path %>
               </li>
+              <% if user_signed_in? && current_user.admin? %>
+                <li class="<%= request.fullpath =~ /blogs\/new/ ? 'active' : '' %>">
+                  <%= link_to 'New Blog', new_blog_path %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -81,5 +99,12 @@ Released   : 20130128
 
   </div>
 
+  <% if user_signed_in? %>
+    <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <a href='<%= new_user_session_path %>'>
+      <%= image_tag 'keychain_small.png', id: 'login_icon' %>
+    </a>
+  <% end %>
 </body>
 </html>

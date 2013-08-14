@@ -1,9 +1,12 @@
 class BlogsController < ApplicationController
+
+  before_filter :admin_only!, except: [:index, :show]
+
   # GET /blogs
   # GET /blogs.json
   def index
-    @first = Blog.order('created_at desc').first
-    @blogs = Blog.order('created_at desc').offset(1).all
+    @first = Blog.where('published = true').order('created_at desc').first
+    @blogs = Blog.where('published = true').order('created_at desc').offset(1).all
 
     respond_to do |format|
       format.html # index.html.erb
