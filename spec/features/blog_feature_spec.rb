@@ -50,7 +50,11 @@ describe "blog pages" do
       page.should_not have_link "Edit"
     end
 
-    it "has a like me on facebook button for the first blog"
+    it "has a like me on facebook button for the first blog" do
+      blog = create(:blog)
+      visit blog_path(blog)
+      page.should have_css ".fb-like"
+    end
   end
 
   describe "edit" do
@@ -141,6 +145,10 @@ describe "blog pages" do
   end
 
   describe "show" do
-    it "has a like me on facebook button"
+    it "has a like me on facebook button" do
+      blog = create(:blog)
+      visit blog_path(blog)
+      page.should have_css ".fb-like"
+    end
   end
 end
