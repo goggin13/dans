@@ -8,4 +8,8 @@ class Blog < ActiveRecord::Base
   def summary(length=250)
     content[0, length]
   end
+
+  def slug
+    title.downcase.gsub(" ", "-")
+  end
 end

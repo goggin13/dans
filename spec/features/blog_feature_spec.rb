@@ -95,6 +95,16 @@ describe "blog pages" do
     it "autosaves your work as you type"
     it "does not autosave if the box is not checked"
     it "shows a live preview as you type"
+
+    it "has a link to destroy the blog" do
+      blog = create(:blog, title: "My Title")
+      user = create(:admin_user)
+      sign_in user
+      visit edit_blog_path(blog)
+      click_link "Delete Blog"
+      page.should have_content "Deleted My Title"
+      Blog.find_by_id(blog.id).should be_nil
+    end
   end
 
   describe "new" do

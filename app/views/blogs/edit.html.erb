@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @blog %> |
+<%= link_to 'Delete Blog', @blog, method: :delete, confirm: "Really Delete #{@blog.title}?" %> | 
 <%= link_to 'Back', blogs_path %>

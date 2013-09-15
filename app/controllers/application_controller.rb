@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include BlogsHelper
   protect_from_forgery
   before_filter :load_recent_posts
 

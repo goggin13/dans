@@ -63,7 +63,7 @@ Released   : 20130128
       </div>
 
       <div id="banner" class="container">
-        <img src="<%= asset_path 'conventional/img04.jpg' %>" width="1000" height="300" alt="" />
+        <img src="<#%= asset_path 'conventional/img04.jpg' %>" width="1000" height="300" alt="" />
       </div>
 
       <div id="page" class="container">
@@ -79,7 +79,7 @@ Released   : 20130128
             <% @recent.each do |post| %>
               <li>
                 <p>
-                  <%= link_to post.title, post %>
+                  <%= link_to_blog post %>
                 </p>
                 <p class="date">
                   <%= post.created_at.strftime("%m-%d-%Y") %>
