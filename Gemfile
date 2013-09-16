@@ -9,6 +9,7 @@ gem 'unicorn', '~> 4.6.3'
 gem 'devise', '~> 3.0.2'
 gem 'faker', '~> 1.2.0'
 gem 'jquery-rails', '~> 3.0.4'
+gem 'asset_sync', '0.5.4'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
