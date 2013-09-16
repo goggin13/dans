@@ -110,7 +110,7 @@ hr {
 #header-wrapper
 {
 	overflow: hidden;
-	height: 80px;
+	height: 100px;
 	margin-bottom: 40px;
 }
 
@@ -122,8 +122,6 @@ hr {
 
 #logo {
 	float: left;
-	width: 300px;
-	height: 80px;
 }
 
 #logo h1, #logo p {

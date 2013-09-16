@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def self.admin_emails
-    ['goggin13@gmail.com']
+    ['goggin13@gmail.com', 'danstipanuk@gmail.com']
   end
 
   def admin?

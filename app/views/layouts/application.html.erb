@@ -12,7 +12,7 @@ Released   : 20130128
 -->
 <html>
   <head>
-    <title>BreakingDan</title>
+    <title>DapperDan</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= favicon_link_tag 'favicon.ico' %>
@@ -40,9 +40,9 @@ Released   : 20130128
       <div id="header-wrapper">
         <div id="header" class="container">
           <div id="logo">
-            <h1>
-              <%= link_to 'BreakingDan', root_path %>
-            </h1>
+            <% 4.times do %>
+              <%= link_to image_tag("dapperdan.jpg", :border => 0), root_path %>
+            <% end %>
           </div>
           <div id="menu">
             <ul>
@@ -63,7 +63,6 @@ Released   : 20130128
       </div>
 
       <div id="banner" class="container">
-        <img src="<#%= asset_path 'conventional/img04.jpg' %>" width="1000" height="300" alt="" />
       </div>
 
       <div id="page" class="container">
