@@ -56,6 +56,9 @@ Released   : 20130128
                 <li class="<%= request.fullpath =~ /blogs\/new/ ? 'active' : '' %>">
                   <%= link_to 'New Blog', new_blog_path %>
                 </li>
+                <li class="<%= request.fullpath =~ /photos/ ? 'active' : '' %>">
+                  <%= link_to 'Photos', photos_path %>
+                </li>
               <% end %>
             </ul>
           </div>

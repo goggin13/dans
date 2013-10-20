@@ -1,4 +1,7 @@
 Dans::Application.routes.draw do
+  resources :photos
+
+
   get "pages/about"
 
   devise_for :users

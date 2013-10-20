@@ -10,6 +10,7 @@ gem 'devise', '~> 3.0.2'
 gem 'faker', '~> 1.2.0'
 gem 'jquery-rails', '~> 3.0.4'
 gem 'asset_sync', '0.5.4'
+gem "paperclip", '3.5.1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -19,6 +20,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'webmock', '1.15.0'
 end
 
 group :test do

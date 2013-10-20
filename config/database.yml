@@ -4,8 +4,9 @@ development:
   database: dans
   pool: 5
   host: localhost 
-  username: postgres
-  password: password
+  username: pair
+  password: pair
+  port: 5433
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -16,5 +17,6 @@ test:
   database: dans-test
   pool: 5
   host: localhost
-  username: postgres
-  password: password
+  username: pair
+  password: pair
+  port: 5433
